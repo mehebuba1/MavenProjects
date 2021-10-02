@@ -1,4 +1,4 @@
-package com.BrowserConfig;
+package com.Common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

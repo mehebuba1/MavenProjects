@@ -1,8 +1,7 @@
-package com.BrowserConfig;
+package com.Common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ChromeConfig {
 
@@ -11,6 +10,7 @@ public class ChromeConfig {
     public static void main(String[] args) {
         launch_Chrome();
         close_Chrome();
+        init_And_Open_URL();
     }
 
     public static void launch_Chrome() {
@@ -21,5 +21,12 @@ public class ChromeConfig {
 
     public static void close_Chrome() {
         driver.close();
+    }
+
+    public static void init_And_Open_URL() {
+        System.setProperty("webdriver.chrome.driver","./src/main/resources/chromedriver.exe");
+        driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://demo.opencart.com/index.php?route=account/login");
     }
 }
